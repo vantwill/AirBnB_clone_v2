@@ -14,22 +14,27 @@ def hello_hbnb():
 
 @app.route('/hbnb')
 def hbnb():
-    """ Print Web """
+    """ Print Web is cool """
     return 'HBNB'
 
 
 @app.route('/c/<text>')
 def c_is_fun(text):
-    """ Print a char C followed by the value of the text variable """
+    """ Print a char C  """
     return 'C {}'.format(text.replace('_', ' '))
 
 
 @app.route('/python')
 @app.route('/python/<text>')
 def python_is_cool(text='is cool'):
-    """ Print Python, followed by the value of the text variable,
-    with default value of text: is cool"""
+    """ Print Python, followed by the """
     return 'Python {}'.format(text.replace('_', ' '))
+
+
+@app.route('/number/<int:n>')
+def number(n):
+    """ number route """
+    return '{:d} is a number'.format(n)
 
 
 if __name__ == '__main__':
